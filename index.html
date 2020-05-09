@@ -42,7 +42,12 @@ p10n3 = 0;
   var wtar = parseInt(document.getElementById("tarw").value)
 var curw45n = 0;
 var curw35n = 0;
+  var imp35 = false;
+   var imp45 = false;
 var curw = (wtar-45);
+  if{curw > 55}{
+    imp45=true
+  }
   if(curw > 44){
     p45n+=1;
     curw -= 90;
@@ -68,12 +73,15 @@ var curw = (wtar-45);
     curw-=20
     curw45n+=1
   }
-  var imp45 = false;
+ 
   if(curw != 0){
     imp45 = true;
   }
   console.log("45 Bar: "+curw45n)
-  curw = wtar-35
+  curw = wtar-35;
+  if{curw > 55}{
+    imp45=true
+  }
   if(curw > 44){
     p45n3+=1;
     curw -= 90;
@@ -99,7 +107,7 @@ var curw = (wtar-45);
     curw-=20
     curw35n+=1
   }
-   var imp35 = false;
+   
   if(curw != 0){
     imp35 = true;
   }
