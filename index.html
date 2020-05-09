@@ -117,20 +117,22 @@ p25n = 0;
  p10n3 = 0;
     }
   }
-  if(curw35n > curw45n){
-    p45e.innerHTML = p45n
-    p35e.innerHTML = p35n
-    p25e.innerHTML = p25n
-    p15e.innerHTML = p15n
-    p10e.innerHTML = p10n
-    document.getElementById("b34").innerHTML = "45"
-  }else{
-      p45e.innerHTML = p45n3
+  if(curw35n < curw45n){
+       p45e.innerHTML = p45n3
     p35e.innerHTML = p35n3
     p25e.innerHTML = p25n3
     p15e.innerHTML = p15n3
     p10e.innerHTML = p10n3
     document.getElementById("b34").innerHTML = "35"
+  }else{
+  
+    
+     p45e.innerHTML = p45n
+    p35e.innerHTML = p35n
+    p25e.innerHTML = p25n
+    p15e.innerHTML = p15n
+    p10e.innerHTML = p10n
+    document.getElementById("b34").innerHTML = "45"
    }
 })
 </script>
