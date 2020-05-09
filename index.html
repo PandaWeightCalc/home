@@ -14,7 +14,7 @@
     width:100vw;
     height:90vh;
     display:grid;
-    
+
   }
 }
 .lobject{
@@ -116,6 +116,7 @@ var curw = (wtar-45)/2;
   }
   if(curw > 9){
     p10n+=1
+    curw-=10;
     curw45n+=1
   }
 
@@ -128,6 +129,7 @@ var curw = (wtar-45)/2;
    console.log("45 Bar 25: "+p25n)
    console.log("45 Bar 15: "+p15n)
   console.log("45 Bar 10: "+p10n)
+  console.log(curw)
   console.log(imp45)
   curw = (wtar-35)/2;
 
@@ -162,7 +164,7 @@ var curw = (wtar-45)/2;
    console.log("35 Bar 25: "+p25n3)
    console.log("35 Bar 15: "+p15n3)
   console.log("35 Bar 10: "+p10n3)
-
+  console.log(curw)
   if(curw != 0){
     imp35 = true;
   }
