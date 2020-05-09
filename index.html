@@ -8,6 +8,7 @@
 <p>25 Pounds(on each side): <span id="p25">0</span></p>
 <p>15 Pounds(on each side): <span id="p15">0</span></p>
 <p>10 Pounds(on each side): <span id="p10">0</span></p>
+<p>Bar: <span id="b34">0</span></p>
 <script>
 var p45n = 0;
 var p35n = 0;
@@ -25,12 +26,13 @@ var p35e = document.getElementById("p35")
 var p25e = document.getElementById("p25")
 var p15e = document.getElementById("p15")
 var p10e = document.getElementById("p10")
-var wtar = parseInt(document.getElementById("tarw").value)
+
 var btar = document.getElementById("tarwsub")
 btar.addEventListener("click",function(){
+  var wtar = parseInt(document.getElementById("tarw").value)
 var curw45n = 0;
 var curw35n = 0;
-var curw = wtar-45
+var curw = (wtar-45);
   if(curw > 44){
     p45n+=1;
     curw -= 45;
@@ -89,12 +91,14 @@ var curw = wtar-45
     p25e.innerHTML = p25n
     p15e.innerHTML = p15n
     p10e.innerHTML = p10n
+    document.getElementById("b34").innerHTML = "45"
   }else{
       p45e.innerHTML = p45n3
     p35e.innerHTML = p35n3
     p25e.innerHTML = p25n3
     p15e.innerHTML = p15n3
     p10e.innerHTML = p10n3
+    document.getElementById("b34").innerHTML = "35"
    }
 })
 </script>
