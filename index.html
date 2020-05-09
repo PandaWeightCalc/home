@@ -1,0 +1,102 @@
+<html>
+<head><title>Weight Calculator</title></head>
+<body>
+<input type="integer" id="tarw" placeholder = "0"></input> Pounds
+<button id="tarwsub">Calculate</button>
+<p>45 Pounds(on each side): <span id="p45">0</span></p>
+<p>35 Pounds(on each side): <span id="p35">0</span></p>
+<p>25 Pounds(on each side): <span id="p25">0</span></p>
+<p>15 Pounds(on each side): <span id="p15">0</span></p>
+<p>10 Pounds(on each side): <span id="p10">0</span></p>
+<script>
+var p45n = 0;
+var p35n = 0;
+var p25n = 0;
+var p15n = 0;
+var p10n = 0;
+var p45n3 = 0;
+var p35n3 = 0;
+var p25n3 = 0;
+var p15n3 = 0;
+var p10n3 = 0;
+
+var p45e = document.getElementById("p45")
+var p35e = document.getElementById("p35")
+var p25e = document.getElementById("p25")
+var p15e = document.getElementById("p15")
+var p10e = document.getElementById("p10")
+var wtar = document.getElementById("tarw").value
+var btar = document.getElementById("tarwsub")
+btar.addEventListener("click",function(){
+var curw45n = 0;
+var curw35n = 0;
+var curw = wtar-45
+  if(curw > 44){
+    p45n+=1;
+    curw -= 45;
+    curw45n+=1
+  }
+  if(curw > 34){
+    p35n+=1;
+    curw-=35
+    curw45n+=1
+  }
+  if(curw > 24){
+    p25n+=1
+    curw-=25
+    curw45n+=1
+  }
+  if(curw > 14){
+    p15n+=1
+    curw-=15
+    curw45n+=1
+  }
+  if(curw > 9){
+    p10n+=1
+    curw-=10
+    curw45n+=1
+  }
+  console.log("45 Bar: "+curw45n)
+  curw = wtar-35
+  if(curw > 44){
+    p45n3+=1;
+    curw -= 45;
+    curw35n+=1
+  }
+  if(curw > 34){
+    p35n3+=1;
+    curw-=35
+    curw35n+=1
+  }
+  if(curw > 24){
+    p25n3+=1
+    curw-=25
+    curw35n+=1
+  }
+  if(curw > 14){
+    p15n3+=1
+    curw-=15
+    curw35n+=1
+  }
+  if(curw > 9){
+    p10n3+=1
+    curw-=10
+    curw35n+=1
+  }
+  if(curw35n > curw45n){
+    p45e.innerHTML = p45n
+    p35e.innerHTML = p35n
+    p25e.innerHTML = p25n
+    p15e.innerHTML = p15n
+    p10e.innerHTML = p10n
+  }else{
+      p45e.innerHTML = p45n3
+    p35e.innerHTML = p35n3
+    p25e.innerHTML = p25n3
+    p15e.innerHTML = p15n3
+    p10e.innerHTML = p10n3
+   }
+})
+</script>
+</body>
+</html>
