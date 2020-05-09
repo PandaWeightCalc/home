@@ -1,14 +1,60 @@
 <html>
-<head><title>Weight Calculator</title></head>
+<head><title>Weight Calculator</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+@media (orientation: portrait) {
+  #content-container{
+    background-color:#ffffff;
+    color:#000000;
+    text-align:center;
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    display:grid;
+    
+  }
+}
+.lobject{
+  background-color:#efefef;
+  font-size:3vh;
+  padding-top:4vh;
+}
+.dobject{
+  background-color:#dfdfdf;
+  padding-top:4vh;
+  font-size:3vh;
+}
+@media (orientation: landscape) {
+  body{
+    background-color:#efefef;
+  }
+  #content-container{
+    background-color:#dfdfdf;
+    color:#000000;
+    text-align:center;
+    width:80vw;
+    height:50vh;
+    position:fixed;
+    left:10vw;
+    top:25vh;
+    padding-top:10vh;
+  }
+}
+</style>
+</head>
 <body>
-<input type="integer" id="tarw" placeholder = "0"></input> Pounds
-<button id="tarwsub">Calculate</button>
-<p>45 Pounds(on each side): <span id="p45">0</span></p>
-<p>35 Pounds(on each side): <span id="p35">0</span></p>
-<p>25 Pounds(on each side): <span id="p25">0</span></p>
-<p>15 Pounds(on each side): <span id="p15">0</span></p>
-<p>10 Pounds(on each side): <span id="p10">0</span></p>
-<p>Bar: <span id="b34">0</span></p>
+  <div id="content-container">
+<input type="integer" id="tarw" placeholder = "0" style="background-color:#dfdfdf; color:black; border-radius:10vw;font-size:4vh;text-align:center;"></input>
+<button style = "background-color:#FD762Ddf; color:black; font-size:4vh;"id="tarwsub">Calculate</button>
+<p class="lobject">45 Pounds(on each side): <span id="p45">0</span></p>
+<p class="dobject">35 Pounds(on each side): <span id="p35">0</span></p>
+<p class="lobject">25 Pounds(on each side): <span id="p25">0</span></p>
+<p class="dobject">15 Pounds(on each side): <span id="p15">0</span></p>
+<p class="lobject">10 Pounds(on each side): <span id="p10">0</span></p>
+<p class="dobject">Bar: <span id="b34">0</span></p></div>
 <script>
     var imp35 = false;
    var imp45 = false;
@@ -70,10 +116,9 @@ var curw = (wtar-45)/2;
   }
   if(curw > 9){
     p10n+=1
-    curw-=10
     curw45n+=1
   }
- 
+
   if(curw != 0){
     imp45 = true;
   }
@@ -85,7 +130,7 @@ var curw = (wtar-45)/2;
   console.log("45 Bar 10: "+p10n)
   console.log(imp45)
   curw = (wtar-35)/2;
- 
+
   if(curw > 44){
     p45n3+=1;
     curw -= 45;
@@ -116,15 +161,15 @@ var curw = (wtar-45)/2;
    console.log("35 Bar 35: "+p35n3)
    console.log("35 Bar 25: "+p25n3)
    console.log("35 Bar 15: "+p15n3)
-  console.log("35 Bar 10: "+p10n3)  
-  
+  console.log("35 Bar 10: "+p10n3)
+
   if(curw != 0){
     imp35 = true;
   }
   console.log(imp35)
   if(imp35){
     if(imp45){
-    alert("IMPOSSIBLE")  
+    alert("IMPOSSIBLE")
       p45n = 0;
 p35n = 0;
 p25n = 0;
@@ -138,9 +183,10 @@ p25n = 0;
       imp45=false;
       imp35=false;
       document.getElementById("b34").innerHTML = "0"
+return;
     }
-  
-  else if(imp45){
+  }
+  if(imp45){
        p45e.innerHTML = p45n3
     p35e.innerHTML = p35n3
     p25e.innerHTML = p25n3
@@ -167,7 +213,7 @@ p25n = 0;
     p10e.innerHTML = p10n3
     document.getElementById("b34").innerHTML = "35"
   }else{
-    
+
      p45e.innerHTML = p45n
     p35e.innerHTML = p35n
     p25e.innerHTML = p25n
@@ -175,7 +221,7 @@ p25n = 0;
     p10e.innerHTML = p10n
     document.getElementById("b34").innerHTML = "45"
    }
-}
+
 })
 </script>
 </body>
