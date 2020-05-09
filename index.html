@@ -119,26 +119,44 @@ p25n = 0;
  p25n3 = 0;
  p15n3 = 0;
  p10n3 = 0;
+      imp45=false;
+      imp35=false;
     }
   }
-  
-  if(curw35n < curw45n){
-    if(imp35){}else{
+  if(imp45){
        p45e.innerHTML = p45n3
     p35e.innerHTML = p35n3
     p25e.innerHTML = p25n3
     p15e.innerHTML = p15n3
     p10e.innerHTML = p10n3
-    document.getElementById("b34").innerHTML = "35"}
+    document.getElementById("b34").innerHTML = "35"
+      imp45=false;
+      imp35=false;
+   }else if(imp35){
+     p45e.innerHTML = p45n
+    p35e.innerHTML = p35n
+    p25e.innerHTML = p25n
+    p15e.innerHTML = p15n
+    p10e.innerHTML = p10n
+    document.getElementById("b34").innerHTML = "45"
+     imp45=false;
+      imp35=false;
+   }
+  if(curw35n < curw45n){
+       p45e.innerHTML = p45n3
+    p35e.innerHTML = p35n3
+    p25e.innerHTML = p25n3
+    p15e.innerHTML = p15n3
+    p10e.innerHTML = p10n3
+    document.getElementById("b34").innerHTML = "35"
   }else{
-  if(imp45){}else{
     
      p45e.innerHTML = p45n
     p35e.innerHTML = p35n
     p25e.innerHTML = p25n
     p15e.innerHTML = p15n
     p10e.innerHTML = p10n
-    document.getElementById("b34").innerHTML = "45"}
+    document.getElementById("b34").innerHTML = "45"
    }
 })
 </script>
